@@ -1,0 +1,100 @@
+.panel{
+    border:1px solid blue;
+    background-color: silver;
+}
+.panel .btn-group{
+    margin: 10px 0 20px;
+}
+.panel .btn-group .btn{
+    transition:background-color 3s ease;
+}
+.table-filter{
+    background-color: silver;
+    border-bottom: 1px solid saddlebrown;
+}
+.table-filter tbody tr:hover{
+    cursor: pointer;
+    background-color: #eee;
+
+}
+.table-filter tbody tr td{
+    vertical-align: middle;
+    border-top-color: #eee;
+    padding: 12px;
+}
+.table-filter tbody tr.selected td{
+    background-color: #eee;
+}
+.table-filter tr td:first-child{
+    width:40px;
+}
+.table-filter tr td:nth-child(2){
+    width: 40px;
+}
+.ckbox{
+    position: relative;
+}
+.ckbox input[type="checkbox"]{
+    opacity: 0;
+}
+.ckbox label ::before{
+    top:1px;
+    width:20px;
+    height: 20px;
+    position: relative;
+    border-radius: 2px;
+    display: block;
+    content: '';
+    background-color: #fff;
+    border:1px solid blue;
+}
+.ckbox input[type="checkbox"]:checked+label:before{
+    background-color: blue;
+    border-color: blue;
+}
+.ckbox input[type="checkbox"]:checked+label:after{
+    top:4px;
+    left: 4px;
+    font-family: glyphicons Halflings;
+    position: absolute;
+    content:'|e013';
+    font-size: 12px;
+}
+.table-filter .star.star-checked{
+    color: black;
+}
+.table-filter.star:hover{
+    color:#ccc;
+}
+.table-filter.star.star-checked:hover{
+    color:whitesmoke;
+}
+.table-filter.media-photo{
+    width:35px;
+}
+.table-filter.media-body{
+    display: inline;
+}
+.table-filter.media-meta{
+    font-size: 11px;
+    color:brown;
+}
+.table-filter.table-filter.media-title{
+    color: black;
+    font-size: 14px;
+    margin: 0;
+    font-weight: bold;
+}
+.table-filter.media.title span.pagodo{
+    color:blue;
+
+}
+.table-filter.media.title span.pendient{
+    color:blueviolet;
+}
+.table-filter.media.title span.cancelado{
+    color:black;
+}
+.table-filter.media.summmary{
+    font-size: 14px;
+}

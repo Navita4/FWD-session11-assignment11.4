@@ -1,0 +1,62 @@
+<section id="login">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="form-wrap">
+                    <form novalidate autocomplete="off" [FormGroup]="myForm"(ngSubmit)="addCricketer(myForm.value)">
+                        <h1>Add a Cricketer</h1>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="FirstName" FormControlName="FirstName">
+                            <div *ngIf="myForm.controls['FirstName'].errors && (myForm.controls['FirstName'].dirty||myForm.controls['FirstName'].touched)"
+                            class="alert alert-danger">
+                            <div *ngIf="myForm.controls[FirstName].hasError('required')">
+                                FirstName is required.
+                            </div>
+                            <div *ngIf="myForm.controls[FirstName].hasError('minlength')">
+                                Please enter atleast 2 characters.
+                            </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                                <input type="text" class="form-control" placeholder="LastName" FormControlName="LastName">
+                                <div *ngIf="myForm.controls['LastName'].errors && (myForm.controls['LastName'].dirty||myForm.controls['LastName'].touched)"
+                                class="alert alert-danger">
+                                <div *ngIf="myForm.controls[LastName].hasError('required')">
+                                    LastName is required.
+                                </div>
+                                <div *ngIf="myForm.controls[LastName].hasError('minlength')">
+                                    Please enter atleast 2 characters.
+                                </div>
+                                <div *ngIf="myForm-controls['LastName'].hasError('pattern')">
+                                    LastName accepts alphabets.
+                                </div>
+                                </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" FormControlName="favShot" class="form-control" placeholder="Favourite Shot">
+                        </div>
+                        <div class="form-group">
+                            <select class="txt-box" name="PlayerType" FormControlName="PlayerType" class="form-control">
+                                <option [value]="null"[disabled]="true">select option</option>
+                                <option *ngFor="let player of PlayerType" [ngValue]="player.type">
+                                    {{player.type}}
+                                </option>
+                            </select>
+                        </div>
+                        <input type="submit" id="btn-login" class="btn btn-custom btn-lg btn-block" value="Add"[disabled]
+                        ="myForm.invalid">
+                        <input type="submit" id="btn-login" class="btn btn-custom btn-lg btn-block" value="Reset"(Click)
+                        ="resetForm()">
+                    </form>
+                    <hr>
+                </div>
+                <div *ngIf="cricketersArray.length>0">
+                    <app-cricketers-list[cricketerDetail]="cricketersArray"></app-cricketers-list>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+                                    
